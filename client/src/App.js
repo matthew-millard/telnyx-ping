@@ -1,7 +1,12 @@
-import './App.css';
+import { Form } from "./components";
+import "./App.module.css";
 
 function App() {
-  return <div>Hello World!</div>;
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
 
 export default App;
