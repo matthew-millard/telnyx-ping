@@ -5,7 +5,7 @@ function Input({ type, label, id, required, name, value, onChange }) {
 
   function handleBlur(event) {
     if (!value.trim() && event.target.name !== "addressTwo") {
-      setErrorMessage(`${label} is required`);
+      setErrorMessage(<i>Required</i>);
     } else {
       setErrorMessage("");
     }

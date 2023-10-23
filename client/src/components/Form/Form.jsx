@@ -15,7 +15,7 @@ function Form() {
     townCity: "",
     province: "",
     postalCode: "",
-    country: "Canada", // Default value
+    country: "",
   });
 
   function handleInputChange(event) {
@@ -93,7 +93,7 @@ function Form() {
           />
           <Input
             type="text"
-            label="Address Line 2"
+            label="Address Line 2 (Optional)"
             id="addressTwo"
             name="addressTwo"
             value={formData.addressTwo}
@@ -108,14 +108,28 @@ function Form() {
             onChange={handleInputChange}
             required={true}
           />
-          <Input
-            type="text"
-            label="Province"
-            id="province"
+          <Select
+            id="provinceSelect"
             name="province"
+            label="Province"
             value={formData.province}
             onChange={handleInputChange}
-            required={true}
+            options={[
+              { value: "", label: "Select a province", disabled: true },
+              { value: "Alberta", label: "Alberta" },
+              { value: "British Columbia", label: "British Columbia" },
+              { value: "Manitoba", label: "Manitoba" },
+              { value: "New Brunswick", label: "New Brunswick" },
+              { value: "Newfoundland and Labrador", label: "Newfoundland and Labrador" },
+              { value: "Northwest Territories", label: "Northwest Territories" },
+              { value: "Nunavut", label: "Nunavut" },
+              { value: "Nova Scotia", label: "Nova Scotia" },
+              { value: "Ontario", label: "Ontario" },
+              { value: "Prince Edward Island", label: "Prince Edward Island" },
+              { value: "Quebec", label: "Quebec" },
+              { value: "Saskatchewan", label: "Saskatchewan" },
+              { value: "Yukon", label: "Yukon" },
+            ]}
           />
           <Input
             type="text"
@@ -132,7 +146,10 @@ function Form() {
             label="Country"
             value={formData.country}
             onChange={handleInputChange}
-            options={[{ value: "Canada" }, { value: "USA", disabled: true }]}
+            options={[
+              { value: "", label: "Select a country", disabled: true },
+              { value: "Canada", label: "Canada" },
+            ]}
           />
         </fieldset>
         <Button type="submit" label="Book" />

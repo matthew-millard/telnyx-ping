@@ -7,7 +7,7 @@ function Select({ id, name, label, options, value, onChange }) {
       <select id={id} name={name} onChange={onChange} value={value}>
         {options.map((option) => (
           <option key={option.value} value={option.value} disabled={option.disabled}>
-            {option.value}
+            {option.label}
           </option>
         ))}
       </select>
