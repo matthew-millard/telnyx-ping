@@ -8,19 +8,19 @@ const ClientSchema = new Schema(
     lastName: { type: String, required: true, trim: true },
     email: {
       type: String,
-      // validator: {
-      //   validator: isValidEmail,
-      //   message: (props) => `${props.value} is not a valid email address!`,
-      // },
+      validator: {
+        validator: isValidEmail,
+        message: (props) => `${props.value} is not a valid email address!`,
+      },
       required: true,
       trim: true,
     },
     mobileNumber: {
       type: String,
-      // validator: {
-      //   validator: isValidMobileNumber,
-      //   message: (props) => `${props.value} is not a valid Canadian mobile number!`,
-      // },
+      validator: {
+        validator: isValidMobileNumber,
+        message: (props) => `${props.value} is not a valid Canadian mobile number!`,
+      },
       required: true,
       trim: true,
     },
