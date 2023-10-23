@@ -1,5 +1,5 @@
 const typeDefs = `
-type Client {
+type User {
     _id: ID
   firstName: String!
   lastName: String!
@@ -15,13 +15,13 @@ type Client {
   updatedAt: String
 }
 
-type AppointmentMutationResponse {
+type createUserAccountResponse {
     success: Boolean!
     message: String
-    client: Client
+    user: User
 }
 
-input AppointmentInput {
+input userAccountInput {
     firstName: String!
     lastName: String!
     email: String!
@@ -41,9 +41,9 @@ type Query {
 
 
 type Mutation {
-    createAppointment(
-        input: AppointmentInput!
-    ): AppointmentMutationResponse!
+    createUserAccount(
+        input: userAccountInput!
+    ): createUserAccountResponse!
     }
 `;
 

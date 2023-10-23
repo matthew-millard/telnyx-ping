@@ -1,3 +1,3 @@
-import Client from "./Client.js";
+import User from "./User.js";
 
-export { Client };
+export { User };

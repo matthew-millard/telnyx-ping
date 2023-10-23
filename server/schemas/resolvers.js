@@ -1,26 +1,25 @@
-import { Client } from "../models/Index.js";
+import { User } from "../models/Index.js";
 
 const resolvers = {
   Query: {
     hello: () => "Hello World!",
   },
   Mutation: {
-    createAppointment: async (_, { input }) => {
-      console.log("hi");
+    createUserAccount: async (_, { input }) => {
       try {
-        await Client.create({
+        await User.create({
           ...input,
         });
         return {
           success: true,
-          message: "Appointment created successfully!",
-          client: input,
+          message: "Account created successfully!",
+          user: input,
         };
       } catch (err) {
         console.log(err);
         return {
           success: false,
-          message: "Appointment failed to create!",
+          message: "Failed to create account!",
         };
       }
     },
