@@ -1,13 +1,10 @@
 import React from "react";
 
-function Select({ id, name, label, options }) {
-  // Find the first option that is selected
-  const defaultValue = options.find((option) => options.selected)?.value;
-
+function Select({ id, name, label, options, value, onChange }) {
   return (
     <div>
       <label htmlFor={id}>{label}</label>
-      <select id={id} name={name} defaultValue={defaultValue}>
+      <select id={id} name={name} onChange={onChange} value={value}>
         {options.map((option) => (
           <option key={option.value} value={option.value} disabled={option.disabled}>
             {option.value}

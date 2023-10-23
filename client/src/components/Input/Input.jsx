@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-function Input({ type, label, id, name, value, onChange }) {
+function Input({ type, label, id, required, name, value, onChange }) {
   const [errorMessage, setErrorMessage] = useState("");
 
-  function handleBlur() {
-    if (!value.trim()) {
+  function handleBlur(event) {
+    if (!value.trim() && event.target.name !== "addressTwo") {
       setErrorMessage(`${label} is required`);
     } else {
       setErrorMessage("");
@@ -21,7 +21,8 @@ function Input({ type, label, id, name, value, onChange }) {
         value={value}
         onChange={onChange}
         onBlur={handleBlur}
-        aria-describedby={`${id}-error`}
+        required={required}
+        aria-describedby={`${label}-error`}
       />
       <small id={`${id}-error`} className="errorMessage">
         {errorMessage}
