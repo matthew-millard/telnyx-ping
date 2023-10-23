@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { CREATE_APPOINTMENT } from "../../graphql/mutations";
+import { CREATE_USER_ACCOUNT } from "../../graphql/mutations";
 import { Input, Button, Select } from "../../components";
 
 function Form() {
-  const [createAppointment, { error }] = useMutation(CREATE_APPOINTMENT);
+  const [createUserAccount, { error }] = useMutation(CREATE_USER_ACCOUNT);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -30,7 +30,7 @@ function Form() {
     event.preventDefault();
     console.log("Form submitted", formData);
     // TODO: Send data to server
-    const response = await createAppointment({ variables: { input: formData } });
+    const response = await createUserAccount({ variables: { input: formData } });
     console.log(response);
     // TODO: Handle response from server
     // TODO: Display toast notification on success or error

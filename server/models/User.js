@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import isValidEmail from "../utils/isValidEmail.js";
 import isValidMobileNumber from "../utils/isValidMobileNumber.js";
 
-const ClientSchema = new Schema(
+const UserSchema = new Schema(
   {
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
@@ -36,6 +36,6 @@ const ClientSchema = new Schema(
   },
 );
 
-const Client = model("Client", ClientSchema);
+const User = model("User", UserSchema);
 
-export default Client;
+export default User;
