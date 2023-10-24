@@ -11,6 +11,8 @@ type User {
   province: String!
   postalCode: String!
   country: String!
+  username: String!
+  password: String!
   createdAt: String
   updatedAt: String
 }
@@ -32,6 +34,8 @@ input userAccountInput {
     province: String!
     postalCode: String!
     country: String!
+    username: String!
+    password: String!
 }
 
 
