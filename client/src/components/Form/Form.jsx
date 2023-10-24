@@ -16,6 +16,8 @@ function Form() {
     province: "",
     postalCode: "",
     country: "",
+    username: "",
+    password: "",
   });
 
   function handleInputChange(event) {
@@ -28,9 +30,18 @@ function Form() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    console.log("Form submitted", formData);
+    // TODO: Check if passwords match
+    if (formData.password !== formData.confirmPassword) {
+      console.log(formData.password, formData.confirmPassword);
+      console.log("Passwords do not match");
+      return;
+    }
+    // Remove confirmPassword from formData
+    const userDataToSend = { ...formData };
+    delete userDataToSend.confirmPassword;
+
     // TODO: Send data to server
-    const response = await createUserAccount({ variables: { input: formData } });
+    const response = await createUserAccount({ variables: { input: userDataToSend } });
     console.log(response);
     // TODO: Handle response from server
     // TODO: Display toast notification on success or error
@@ -152,7 +163,38 @@ function Form() {
             ]}
           />
         </fieldset>
-        <Button type="submit" label="Book" />
+        <fieldset>
+          <legend>Account Information</legend>
+          <Input
+            type="text"
+            label="Username"
+            id="username"
+            name="username"
+            value={formData.username}
+            onChange={handleInputChange}
+            required={true}
+          />
+          <Input
+            type="password"
+            label="Password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required={true}
+          />
+          <Input
+            type="password"
+            label="Confirm Password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleInputChange}
+            required={true}
+          />
+        </fieldset>
+        <Button type="submit" label="Create Account" />
+        {error && <p className="errorMessage">{error.message}</p>}
       </form>
     </div>
   );

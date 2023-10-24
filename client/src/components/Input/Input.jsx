@@ -24,6 +24,7 @@ function Input({ type, label, id, required, name, value, onChange }) {
         required={required}
         aria-describedby={`${label}-error`}
       />
+
       <small id={`${id}-error`} className="errorMessage">
         {errorMessage}
       </small>

@@ -17,6 +17,8 @@ export const CREATE_USER_ACCOUNT = gql`
         province
         postalCode
         country
+        username
+        password
         createdAt
         updatedAt
       }

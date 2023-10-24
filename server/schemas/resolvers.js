@@ -16,11 +16,7 @@ const resolvers = {
           user: input,
         };
       } catch (err) {
-        console.log(err);
-        return {
-          success: false,
-          message: "Failed to create account!",
-        };
+        throw new Error("Error creating user account");
       }
     },
   },
