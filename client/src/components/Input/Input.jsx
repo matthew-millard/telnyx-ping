@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import css from "./Input.module.css";
 
 function Input({ type, label, id, required, name, value, onChange }) {
   const [errorMessage, setErrorMessage] = useState("");
@@ -12,7 +13,7 @@ function Input({ type, label, id, required, name, value, onChange }) {
   }
 
   return (
-    <div>
+    <div className={css.inputContainer}>
       <label htmlFor={id}>{label}</label>
       <input
         type={type}

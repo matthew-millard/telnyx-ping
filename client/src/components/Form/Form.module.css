@@ -1,0 +1,42 @@
+.formContainer {
+  display: grid;
+  gap: 20px;
+
+  .submitButtonContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .formContainer {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "personal account"
+      "contact contact"
+      "submit submit";
+  }
+
+  .personalContainer {
+    grid-area: personal;
+  }
+
+  .contactContainer {
+    grid-area: contact;
+  }
+  .accountContainer {
+    grid-area: account;
+  }
+
+  .submitButtonContainer {
+    grid-area: submit;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .contactContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+}

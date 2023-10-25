@@ -1,0 +1,11 @@
+.inputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  small {
+    position: absolute;
+    bottom: -20px;
+  }
+}

@@ -1,9 +1,10 @@
 import React from "react";
 import { Form } from "../components";
+import css from "./CreateAccount.module.css";
 
 function CreateAccount() {
   return (
-    <div className="CreateAccount">
+    <div className={css.createAccountContainer}>
       <h1>Create Account</h1>
       <Form />
     </div>
