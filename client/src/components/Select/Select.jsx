@@ -1,8 +1,9 @@
 import React from "react";
+import css from "./Select.module.css";
 
 function Select({ id, name, label, options, value, onChange }) {
   return (
-    <div>
+    <div className={css.selectContainer}>
       <label htmlFor={id}>{label}</label>
       <select id={id} name={name} onChange={onChange} value={value}>
         {options.map((option) => (

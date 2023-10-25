@@ -1,7 +1,28 @@
 @import "./reset.css";
+@import "./colors.css";
 @import "./typography.css";
 @import "./utils.css";
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+fieldset {
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+}
+
+legend {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+select {
+  padding: 2px 6px;
+}
+
+input {
+  padding: 2px 6px;
 }
