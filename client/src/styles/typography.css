@@ -1,1 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h3,
+legend {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+p,
+label {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+small {
+  font-size: 14px;
+  font-weight: 400;
+}

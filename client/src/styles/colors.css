@@ -1,7 +1,8 @@
 :root {
-  --bg-color: hsl(0deg, 0%, 95%);
-  --border-color: hsl(0deg, 0%, 0%);
-  --text-color: hsl(0deg, 0%, 0%);
-  --bg-card-color: hsl(183deg, 31%, 34%);
+  --bg-color: hsl(0deg, 0%, 85%);
+  --border-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 100%);
+  --bg-card-color: hsl(204deg, 42%, 27%);
   --error-message-color: hsl(352deg, 82%, 47%);
+  --button-bg-hover-color: hsl(0deg, 0%, 75%);
 }
