@@ -5,7 +5,7 @@ import css from "./CreateAccount.module.css";
 function CreateAccount() {
   return (
     <div className={css.createAccountContainer}>
-      <h1>Create Account</h1>
+      <h1 className={css.title}>Create Account</h1>
       <Form />
     </div>
   );

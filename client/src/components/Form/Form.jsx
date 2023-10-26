@@ -191,6 +191,7 @@ function Form() {
           value={formData.confirmPassword}
           onChange={handleInputChange}
           required={true}
+          extraInformation="At least 8 characters, 1 uppercase letter, 1 number & 1 symbol"
         />
       </fieldset>
       <div className={css.submitButtonContainer}>

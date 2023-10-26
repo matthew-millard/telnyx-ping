@@ -5,7 +5,7 @@ import { ClipLoader } from "react-spinners";
 function Button({ label, type, loading }) {
   return (
     <button type={type} disabled={loading} className={css.button}>
-      {loading ? <ClipLoader /> : label}
+      {loading ? <ClipLoader color="white" size="24px" data-testid="loading-spinner" /> : label}
     </button>
   );
 }

@@ -5,7 +5,8 @@
   margin-bottom: 20px;
 }
 
-.errorMessage {
-  position: absolute;
-  bottom: -20px;
+.inputLabel {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
 }
