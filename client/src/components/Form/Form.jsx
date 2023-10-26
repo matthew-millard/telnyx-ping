@@ -51,7 +51,7 @@ function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={css.formContainer}>
+    <form onSubmit={handleSubmit} className={css.formContainer} data-testid="form">
       <fieldset className={css.personalContainer}>
         <legend>Personal Information</legend>
         <Input
