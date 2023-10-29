@@ -4,7 +4,7 @@ type User {
   firstName: String!
   lastName: String!
   email: String!
-  mobileNumber: String!
+  phoneNumber: String!
   addressOne: String!
   addressTwo: String
   townCity: String!
@@ -15,6 +15,7 @@ type User {
   password: String!
   createdAt: String
   updatedAt: String
+  isVerified: Boolean
 }
 
 type createUserAccountResponse {
@@ -23,11 +24,23 @@ type createUserAccountResponse {
     user: User
 }
 
-input userAccountInput {
+type phoneNumberVerificationResponse {
+    success: Boolean!
+    pendingVerification: Boolean!
+    message: String!
+}
+
+
+type VerificationResponse {
+    success: Boolean!
+    message: String!
+}
+
+input createAccountInput {
     firstName: String!
     lastName: String!
     email: String!
-    mobileNumber: String!
+    phoneNumber: String!
     addressOne: String!
     addressTwo: String
     townCity: String!
@@ -38,6 +51,11 @@ input userAccountInput {
     password: String!
 }
 
+input verifyPhoneNumberInput {
+    phoneNumber: String!
+    verificationCode: String!
+}
+
 
 type Query {
     hello: String
@@ -46,9 +64,13 @@ type Query {
 
 type Mutation {
     createUserAccount(
-        input: userAccountInput!
-    ): createUserAccountResponse!
-    }
+        input: createAccountInput!
+    ): phoneNumberVerificationResponse!
+
+    verifyPhoneNumber(
+        input: verifyPhoneNumberInput!
+    ): VerificationResponse!
+}
 `;
 
 export default typeDefs;
