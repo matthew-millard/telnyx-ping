@@ -45,8 +45,8 @@ function Form() {
       verificationCode,
     };
     //  TODO: Send verification code to server
-    const { data } = await verifyPhoneNumber({ variables: { input: verificationData } });
-    console.log(data);
+    const response = await verifyPhoneNumber({ variables: { input: verificationData } });
+    console.log(response);
   }
 
   async function handleSubmit(event) {
@@ -220,8 +220,9 @@ function Form() {
           {error && <p className="errorMessage">{error.message}</p>}
         </div>
       </form>
+
       {showVerificationInput ? (
-        <form onSubmit={handleVerification}>
+        <form onSubmit={handleVerification} className={css.verificationCodeContainer}>
           <Input
             type="text"
             label="Verification Code"
@@ -231,7 +232,9 @@ function Form() {
             value={verificationCode}
             extraInformation="Please enter the verification code sent to your phone number. Expires in 5 minutes."
           />
-          <Button type="submit" label="Verify" loading={verificationLoading} />
+          <div className={css.verificationSubmitButton}>
+            <Button type="submit" label="Verify" loading={verificationLoading} />
+          </div>
           {verificationError && <p className="errorMessage">{verificationError.message}</p>}
         </form>
       ) : null}

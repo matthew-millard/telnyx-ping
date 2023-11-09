@@ -1,8 +1,28 @@
 .formContainer {
   display: grid;
   gap: 20px;
+  padding-bottom: 40px;
 
   .submitButtonContainer {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.verificationCodeContainer {
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+
+  .verificationSubmitButton {
+    margin: 0 auto;
+    max-width: 100px;
     display: flex;
     justify-content: center;
   }

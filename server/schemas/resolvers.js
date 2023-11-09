@@ -56,10 +56,11 @@ const resolvers = {
     },
     verifyPhoneNumber: async (_, { input }) => {
       const { phoneNumber, verificationCode } = input;
+      console.log(phoneNumber, verificationCode);
 
       try {
         // Validate verification code
-        const isValid = validateVerificationCode(phoneNumber, verificationCode);
+        const isValid = await validateVerificationCode(phoneNumber, verificationCode);
 
         if (!isValid.success) {
           return {

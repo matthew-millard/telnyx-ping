@@ -43,7 +43,7 @@ const UserSchema = new Schema(
       },
     },
     isVerified: { type: Boolean, default: false },
-    expireAt: { type: Date, default: Date.now, index: { expires: "1m" } },
+    expireAt: { type: Date, default: Date.now, index: { expires: "5m" } },
   },
   {
     timestamps: true,
