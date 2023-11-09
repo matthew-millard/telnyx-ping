@@ -1,27 +1,20 @@
 import { gql } from "@apollo/client";
 
 export const CREATE_USER_ACCOUNT = gql`
-  mutation createUserAccount($input: userAccountInput!) {
+  mutation createUserAccount($input: createAccountInput!) {
     createUserAccount(input: $input) {
       success
+      pendingVerification
       message
-      user {
-        _id
-        firstName
-        lastName
-        email
-        mobileNumber
-        addressOne
-        addressTwo
-        townCity
-        province
-        postalCode
-        country
-        username
-        password
-        createdAt
-        updatedAt
-      }
+    }
+  }
+`;
+
+export const VERIFY_PHONE_NUMBER = gql`
+  mutation verifyPhoneNumber($input: verifyPhoneNumberInput!) {
+    verifyPhoneNumber(input: $input) {
+      success
+      message
     }
   }
 `;

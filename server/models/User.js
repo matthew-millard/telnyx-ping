@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import isValidEmail from "../utils/isValidEmail.js";
-import isValidMobileNumber from "../utils/isValidMobileNumber.js";
+import isValidPhoneNumber from "../utils/isValidPhoneNumber.js";
 import isValidPassword from "../utils/isValidPassword.js";
 
 const UserSchema = new Schema(
@@ -9,7 +9,7 @@ const UserSchema = new Schema(
     lastName: { type: String, required: true, trim: true },
     email: {
       type: String,
-      validator: {
+      validate: {
         validator: isValidEmail,
         message: (props) => `${props.value} is not a valid email address!`,
       },
@@ -17,11 +17,11 @@ const UserSchema = new Schema(
       trim: true,
       unique: true,
     },
-    mobileNumber: {
+    phoneNumber: {
       type: String,
-      validator: {
-        validator: isValidMobileNumber,
-        message: (props) => `${props.value} is not a valid Canadian mobile number!`,
+      validate: {
+        validator: isValidPhoneNumber,
+        message: (props) => `${props.value} is not a valid phone number!`,
       },
       required: true,
       trim: true,
@@ -37,11 +37,13 @@ const UserSchema = new Schema(
       type: String,
       required: true,
       trim: true,
-      validator: {
-        validator: (value) => isValidPassword(value).isValid,
+      validate: {
+        validator: isValidPassword,
         message: (props) => isValidPassword(props.value).message,
       },
     },
+    isVerified: { type: Boolean, default: false },
+    expireAt: { type: Date, default: Date.now, index: { expires: "5m" } },
   },
   {
     timestamps: true,
