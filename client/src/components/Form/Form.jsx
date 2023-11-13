@@ -73,6 +73,10 @@ function Form() {
   return (
     <>
       <form onSubmit={handleSubmit} className={css.formContainer} data-testid="form">
+        <div className={css.titleContainer}>
+          <h1>Create Account</h1>
+        </div>
+
         <fieldset className={css.personalContainer}>
           <legend>Personal Information</legend>
           <Input
