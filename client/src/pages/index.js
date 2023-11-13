@@ -1,3 +1,4 @@
-import CreateAccount from "./CreateAccount";
+import Home from "./Home/Home";
+import CreateAccount from "./CreateAccount/CreateAccount";
 
-export { CreateAccount };
+export { Home, CreateAccount };
