@@ -5,8 +5,6 @@
   --bg-card-color: hsl(204deg, 42%, 27%);
   --error-message-color: hsl(352deg, 82%, 47%);
   --button-bg-hover-color: hsl(0deg, 0%, 75%);
-  -box-shadow-big-soft:
-    hsla(0, 0%, 100%, 0.1) 0px 1px 1px 0px inset,
-    hsla(204deg, 42%, 27%, 0.25) 0px 50px 100px -20px,
-    hsla(0, 0%, 0%, 0.3) 0px 30px 60px -30px;
+  --box-shadow-big-soft: hsla(0, 0%, 100%, 0.1) 0px 1px 1px 0px inset,
+    hsla(204deg, 42%, 27%, 0.25) 0px 50px 100px -20px, hsla(0, 0%, 0%, 0.3) 0px 30px 60px -30px;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "../components";
+import { Form } from "../../components";
 import css from "./CreateAccount.module.css";
 
 function CreateAccount() {
