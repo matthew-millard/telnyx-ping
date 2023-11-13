@@ -17,7 +17,7 @@ function Home() {
           <h2>Book your appointment with one of our specialists today!</h2>
           <div className={css.authButtons}>
             <Button label="Sign In" />
-            <Button label="Create Account" />
+            <Button label="Create Account" url="/create-account" />
           </div>
         </div>
       </div>
