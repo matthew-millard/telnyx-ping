@@ -1,18 +1,28 @@
-.createAccountContainer {
-  width: 100%;
-  max-width: 900px;
-  background-color: var(--bg-card-color);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: var(-box-shadow-big-soft);
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  /* overflow: hidden; */
+  background: url("../../assets/images/medical_specialist_with_family.jpg") no-repeat center 0%
+    fixed;
+  background-size: cover;
+  padding: 10px;
 }
 
-.title {
-  margin-bottom: 10px;
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: rgba(37, 71, 89, 1);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-big-soft);
 }
 
-@media screen and (min-width: 576px) {
-  .createAccountContainer {
-    padding: 20px 40px 40px;
+@media screen and (min-width: 1400px) {
+  .formContainer {
+    margin-top: 0;
   }
 }

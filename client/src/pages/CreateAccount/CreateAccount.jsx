@@ -4,9 +4,12 @@ import css from "./CreateAccount.module.css";
 
 function CreateAccount() {
   return (
-    <div className={css.createAccountContainer}>
-      <h1 className={css.title}>Create Account</h1>
-      <Form />
+    <div>
+      <div className={css.pageContainer}>
+        <div className={css.formContainer}>
+          <Form />
+        </div>
+      </div>
     </div>
   );
 }

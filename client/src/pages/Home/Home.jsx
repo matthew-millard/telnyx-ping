@@ -5,7 +5,7 @@ import css from "./Home.module.css";
 function Home() {
   return (
     <div>
-      <div className={css.fixedHeader}>
+      <div className="fixedHeader">
         <Logo />
       </div>
       <div className={css.pageContainer} style={{ backgroundColor: "aqua" }}>

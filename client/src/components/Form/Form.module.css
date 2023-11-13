@@ -1,15 +1,14 @@
 .formContainer {
   display: grid;
-  gap: 20px;
-  padding-bottom: 40px;
-
-  .submitButtonContainer {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
+  gap: 10px;
+  padding: 20px;
 }
 
+.submitButtonContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
 .verificationCodeContainer {
   margin: 0 auto;
   max-width: 400px;
@@ -32,9 +31,14 @@
   .formContainer {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
+      "title title"
       "personal account"
       "contact contact"
       "submit submit";
+  }
+
+  .titleContainer {
+    grid-area: title;
   }
 
   .personalContainer {
@@ -57,6 +61,6 @@
   .contactContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 10px;
   }
 }
